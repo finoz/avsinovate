@@ -1,0 +1,90 @@
+@use 'helpers' as *;
+
+.site {
+	&-title {
+		@extend %font-primary-xl;
+	}
+	&-subtitle {
+		@extend %font-secondary-l;
+	}
+	&-abstract {
+		@extend %font-primary-l;
+	}
+}
+
+.section {
+    padding: 2rem;
+	max-width: 128rem;
+	margin: 0 auto;
+	width: 100%;
+	&-title {
+		@extend %font-primary-l;
+	}
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.card {
+	position: relative;
+	border-left: 0.4rem solid currentColor;
+	padding-left: 3rem;
+	.time {
+		@extend %font-secondary-s;
+		&::before {
+			content: '↘';
+			padding-right: 1rem;
+		}
+	}
+	&-title {
+		@extend %font-primary-m;
+	}
+	/* &--laboratori {
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 1rem;
+			height: 100%;
+			background-color: currentColor;
+			mask: 
+			  radial-gradient(0.5rem at 100% 25%,#0000 98%,#000) calc(100% - 0.5rem) 50%/100% 2rem repeat-y,
+			  radial-gradient(0.5rem at 50% 75%,#000 99%,#0000 101%) right/1rem 2rem repeat-y
+		}
+	} */
+}
+
+.footer {
+	&-content {
+		display: flex;
+		flex-direction: column;
+		gap: 4rem;
+		width: 100%;
+		@include breakpoint(tablet-landscape) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+	&-block {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		@include breakpoint(tablet-landscape) {
+			flex-direction: row;
+			align-items: flex-end;
+		}
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+		@include breakpoint(tablet-landscape) {
+			width: 20rem;
+		}
+	}
+	
+}

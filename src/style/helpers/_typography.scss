@@ -1,0 +1,96 @@
+@use 'breakpoints' as *;
+
+:root {
+    --font-size-root: 10px;
+    --font-family-primary: 'Exat', sans-serif;
+    --font-family-secondary: 'Nyck', serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @extend %headings !optional;
+    //font-size: var(--font-size-root);
+    //font-weight: normal;
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+    line-height: inherit;
+}
+
+%font-base {
+    font-family: var(--font-family-primary);
+    font-weight: 400;
+    letter-spacing: 0;
+    margin: 0;
+}
+
+// note
+%font-primary-xs {
+    @extend %font-base;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+%font-primary-s {
+    @extend %font-base;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    @include breakpoint(tablet-landscape) {
+        font-size: 2rem;
+    }
+}
+
+%font-primary-s-uppercase {
+    @extend %font-primary-s;
+    text-transform: uppercase;
+}
+
+%font-primary-m {
+    @extend %font-base;
+    font-size: 2.1rem;
+    line-height: 1.5;
+    font-weight: 700;
+    @include breakpoint(tablet-landscape) {
+        font-size: 2.4rem;
+    }
+}
+
+
+
+%font-primary-l {
+    @extend %font-base;
+    font-size: 2.4rem;
+    line-height: 1.5;
+    @include breakpoint(tablet-landscape) {
+        font-size: 4rem;
+    }
+}
+
+%font-primary-xl {
+    @extend %font-base;
+    font-size: 6rem;
+    line-height: 1.2;
+    @include breakpoint(tablet-landscape) {
+        font-size: 8rem;
+    }
+}
+
+/* secondary */
+%font-secondary-s {
+    @extend %font-primary-s;
+    font-family: var(--font-family-secondary);
+}
+
+%font-secondary-m {
+    @extend %font-primary-m;
+    font-family: var(--font-family-secondary);
+}
+
+%font-secondary-l {
+    @extend %font-primary-l;
+    font-family: var(--font-family-secondary);
+}
